@@ -10,6 +10,7 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+
 }
 
 img {
@@ -20,35 +21,51 @@ img {
 .timer {
   display: flex;
   gap: 30px;
-  font-size: 24px;
+  font-size: 70px;
   color: blue;
 }
 
 button {
   background-color: blue;
-  display: inline-block;
+  display: block;
   padding: 5px, 10px, 5px, 10px,;
-  width: 70px;
-  height: 36px;
-  font-size: 24px;
+  font-size: 46px;
   color: white;
   border: 3px solid black;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button:disabled {
   background-color: #adadadec;
 }
 
-input {
-  display: inline-block;
-  height: 36px;
-  margin-right: 10px;
-  margin-bottom: 15px;
+#datetime-picker {
+  display: block;
+
+  font-size: 36px;
+ margin-left: auto;
+ margin-right: auto;
+  margin-bottom: 15px; 
+  
 }
 
 button.is-active {
   background-color: green;
+}
+
+.timer {
+  display: flex;
+  margin-top: 150px;
+}
+
+.field:first-child {
+  margin-left: auto;
+}
+
+.field:last-child {
+  margin-right: auto;
 }
 
 .timer.is-active {
