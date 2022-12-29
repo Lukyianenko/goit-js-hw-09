@@ -16,3 +16,41 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  display: flex;
+  gap: 30px;
+  font-size: 24px;
+  color: blue;
+}
+
+button {
+  background-color: blue;
+  display: inline-block;
+  padding: 5px, 10px, 5px, 10px,;
+  width: 70px;
+  height: 36px;
+  font-size: 24px;
+  color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+button:disabled {
+  background-color: #adadadec;
+}
+
+input {
+  display: inline-block;
+  height: 36px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+button.is-active {
+  background-color: green;
+}
+
+.timer.is-active {
+  color: green;
+}
