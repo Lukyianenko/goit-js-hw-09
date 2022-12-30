@@ -8,23 +8,52 @@ const formValues = {
   amount: null,
 }
 
-formEl.addEventListener('submit', addingFormValues);
-formEl.addEventListener('input', addgFormValues);
+formEl.addEventListener('submit', startMassage);
+formEl.addEventListener('input', addFormValues);
 
-function addingFormValues(evt) {
-  evt.preventDefault();
-  console.log(formValues);
-}
-
-function addgFormValues(evt) {
+function addFormValues(evt) {
   formValues[evt.target.name] = Number(evt.target.value);
 }
 
-// function createPromise(position, delay) {
-//   const shouldResolve = Math.random() > 0.3;
-//   if (shouldResolve) {
-//     // Fulfill
-//   } else {
-//     // Reject
-//   }
-// }
+function startMassage(evt) {
+  evt.preventDefault();
+
+  const firstTimeout = formValues.delay;
+  let intervalTimeout = formValues.step;
+  const amountStep = formValues.amount;
+  
+
+  for (i = 0; i < amountStep; i+=1) {
+
+    position = i + 1;
+    if (i === 0) {
+      delay = firstTimeout;
+    } else {
+      delay = firstTimeout + intervalTimeout * i;
+    }
+    
+setTimeout(() => {
+createPromise(position, delay)
+.then(({ position, delay }) => {
+          Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        })
+.catch(({ position, delay }) => {
+          Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+        });
+     }, firstTimeout + intervalTimeout * i);
+  }
+}
+  
+
+function createPromise(position, delay) { 
+    const shouldResolve = Math.random() > 0.3;
+    const promise = new Promise((res, rej) => {
+      if (shouldResolve) {
+      res({position, delay});
+    } else {
+      rej({position, delay});
+    }
+  });
+    
+    return promise;
+  }
