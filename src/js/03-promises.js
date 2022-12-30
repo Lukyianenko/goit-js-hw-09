@@ -23,7 +23,7 @@ function startMassage(evt) {
   const amountStep = formValues.amount;
   
 
-  for (i = 0; i < amountStep; i+=1) {
+  for (let i = 0; i < amountStep; i+=1) {
 
     position = i + 1;
     if (i === 0) {
