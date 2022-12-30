@@ -24,12 +24,9 @@ function startMassage(evt) {
   
 
   for (let i = 0; i < amountStep; i+=1) {
-    position = i + 1;
-    if (i === 0) {
-      delay = firstTimeout;
-    } else {
-      delay = firstTimeout + intervalTimeout * i;
-    }
+    let position = i + 1;
+    let delay = firstTimeout + intervalTimeout * i;
+  
    
     
 setTimeout(() => {
