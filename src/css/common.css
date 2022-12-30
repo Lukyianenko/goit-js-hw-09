@@ -71,3 +71,26 @@ button.is-active {
 .timer.is-active {
   color: green;
 }
+
+.form {
+  text-align: center;
+}
+
+.form button {
+  display: block;
+}
+
+.form input {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 10px;
+  margin-bottom: 40px;
+  height: 30px;
+}
+
+.form label {
+  font-size: 36px;
+  color: #c69c1fe3;
+  margin-left: 20px;
+}
