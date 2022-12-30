@@ -25,19 +25,26 @@ function startMassage(evt) {
 
   for (let i = 0; i < amountStep; i+=1) {
 
-    position = i + 1;
-    if (i === 0) {
-      delay = firstTimeout;
-    } else {
-      delay = firstTimeout + intervalTimeout * i;
-    }
+   
     
 setTimeout(() => {
 createPromise(position, delay)
 .then(({ position, delay }) => {
+  position = i + 1;
+  if (i === 0) {
+    delay = firstTimeout;
+  } else {
+    delay = firstTimeout + intervalTimeout * i;
+  }
           Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
         })
 .catch(({ position, delay }) => {
+  position = i + 1;
+  if (i === 0) {
+    delay = firstTimeout;
+  } else {
+    delay = firstTimeout + intervalTimeout * i;
+  }
           Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
         });
      }, firstTimeout + intervalTimeout * i);
