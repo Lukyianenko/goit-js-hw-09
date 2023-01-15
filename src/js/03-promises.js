@@ -17,6 +17,7 @@ function addFormValues(evt) {
 
 function startMassage(evt) {
   evt.preventDefault();
+  formEl.reset();
 
   const firstTimeout = formValues.delay;
   let intervalTimeout = formValues.step;
